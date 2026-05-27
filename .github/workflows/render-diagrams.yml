@@ -1,0 +1,40 @@
+name: Render Draw.io Diagrams
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/architecture/**.drawio' # Only runs when the diagram actually changes
+
+permissions:
+  contents: write # Allows the runner to push the rendered image back to your repo
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Export Draw.io to PNG
+        uses: rlespinasse/drawio-export-action@v2
+        with:
+          path: docs/architecture/
+          format: png
+          transparent: false
+          shadow: true
+
+      - name: Commit and Push Rendered Image
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if a new PNG was generated
+          if [ -f "docs/architecture/TH_Auto_Architecture.drawio.png" ]; then
+            git add docs/architecture/TH_Auto_Architecture.drawio.png
+            git commit -m "chore: auto-render architecture diagram [skip ci]"
+            git push
+          else
+            echo "No diagram changes detected."
+          fi
