@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1700" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- TITLE -->
+    <mxCell id="title" value="APAC Thailand Auto - System Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="400" y="20" width="1100" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LAYER 1: USERS ======================== -->
+    <mxCell id="user-bg" value="User / Actor Layer" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="90" width="1820" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="u1" value="Agents" style="shape=mxgraph.business.person;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="30" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u2" value="Marketeers" style="shape=mxgraph.business.person;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="150" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u3" value="Agency Staff" style="shape=mxgraph.business.person;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="270" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u4" value="Underwriters" style="shape=mxgraph.business.person;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="400" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u5" value="PSC Users" style="shape=mxgraph.business.person;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="520" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u6" value="Surveyors" style="shape=mxgraph.business.person;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="650" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u7" value="Back Office / Finance" style="shape=mxgraph.business.person;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="790" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="u8" value="Compliance Team" style="shape=mxgraph.business.person;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="user-bg">
+      <mxGeometry x="920" y="38" width="60" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LAYER 2: FRONTEND ======================== -->
+    <mxCell id="fe-bg" value="Front-End / Portal Layer" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003087;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="230" width="1400" height="150" as="geometry" />
+    </mxCell>
+    <mxCell id="oh" value="&lt;b&gt;OneHub (OH)&lt;/b&gt; — Find &amp; Acquire Portal&#xa;&#xa;• Quote Creation, Listing &amp; Submission&#xa;• Policy Binding (MOV / MOC / Add-on)&#xa;• MTA / Cancellation journeys&#xa;• Car Inspection UI (Approve / Decline)&#xa;• User Management (Marketer, Surveyor roles)&#xa;• Thai Localisation | Province-first Address&#xa;• IIA Policy &amp; Renewal Records&#xa;• In-system DC Sanction Notifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="fe-bg">
+      <mxGeometry x="20" y="35" width="600" height="105" as="geometry" />
+    </mxCell>
+    <mxCell id="oh-note" value="Users: Agents | Marketeers | Agency Staff" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;" vertex="1" parent="fe-bg">
+      <mxGeometry x="20" y="142" width="600" height="16" as="geometry" />
+    </mxCell>
+
+    <!-- DC Direct UI (Underwriters / PSC) -->
+    <mxCell id="dc-ui" value="&lt;b&gt;Duck Creek Portal (DC UI)&lt;/b&gt;&#xa;&#xa;• Policy Admin screens (UW / PSC)&#xa;• Endorsement / Cancellation screens&#xa;• Document generation &amp; Attachments&#xa;• Post-audit Tasks &amp; Notes&#xa;• Sanction Referral approval screens&#xa;• Thai language screens" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="fe-bg">
+      <mxGeometry x="660" y="35" width="450" height="105" as="geometry" />
+    </mxCell>
+    <mxCell id="dc-ui-note" value="Users: Underwriters | PSC Users" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;" vertex="1" parent="fe-bg">
+      <mxGeometry x="660" y="142" width="450" height="16" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LAYER 3: BFF / BACKEND API ======================== -->
+    <mxCell id="bff-bg" value="BFF / Backend API Layer" style="swimlane;startSize=30;fillColor=#f0e6ff;strokeColor=#7030a0;fontColor=#4d0077;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="410" width="1400" height="180" as="geometry" />
+    </mxCell>
+
+    <!-- PAL API -->
+    <mxCell id="pal" value="&lt;b&gt;PAL API&lt;/b&gt; (Backend for OneHub)&#xa;&#xa;• POST /createQuote&#xa;• PUT  /updateQuote&#xa;• Producer Branch Code sync → Meridian&#xa;• OH Invoice number routing&#xa;• Status sync orchestration (OH ↔ DC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#7030a0;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="bff-bg">
+      <mxGeometry x="20" y="35" width="350" height="130" as="geometry" />
+    </mxCell>
+
+    <!-- Vehicle Data Service -->
+    <mxCell id="veh-svc" value="&lt;b&gt;Vehicle Data Service&lt;/b&gt;&#xa;&#xa;• GET /getBrands&#xa;• GET /getModelsByBrandYear&#xa;• GET /getYearsByBrandModel&#xa;• GET /getSubmodels&#xa;• GET /getVehicleInfo (SI range logic)&#xa;• GET /getVehicleBrandCode ← OIC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#7030a0;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="bff-bg">
+      <mxGeometry x="390" y="35" width="350" height="130" as="geometry" />
+    </mxCell>
+
+    <!-- Policy / Bind Service -->
+    <mxCell id="bind-svc" value="&lt;b&gt;Policy &amp; Bind Service&lt;/b&gt;&#xa;&#xa;• POP API (Policy Overlap Check)&#xa;• Credit Limit API (validate / deduct)&#xa;• Sanction screening orchestration&#xa;• e-Policy issuance (auto &amp; manual)&#xa;• Document delivery (Tax Invoice / Receipt)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#7030a0;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="bff-bg">
+      <mxGeometry x="760" y="35" width="350" height="130" as="geometry" />
+    </mxCell>
+
+    <!-- Notification Service -->
+    <mxCell id="notif-svc" value="&lt;b&gt;Notification Service&lt;/b&gt;&#xa;&#xa;• Sanction referral emails&#xa;• Car inspection alerts&#xa;  (pickup / approve / decline)&#xa;• In-system DC notifications&#xa;• Unread counters &amp; filtering" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#7030a0;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="bff-bg">
+      <mxGeometry x="1130" y="35" width="250" height="130" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LAYER 4: POLICY ADMIN ======================== -->
+    <mxCell id="pa-bg" value="Policy Administration Layer" style="swimlane;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#7a5c00;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="630" width="1400" height="190" as="geometry" />
+    </mxCell>
+    <mxCell id="dc" value="&lt;b&gt;Duck Creek (DC)&lt;/b&gt; — Policy Administration System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;verticalAlign=top;" vertex="1" parent="pa-bg">
+      <mxGeometry x="20" y="35" width="1360" height="145" as="geometry" />
+    </mxCell>
+    <mxCell id="mov" value="&lt;b&gt;MOV&lt;/b&gt;&#xa;Motor Own Vehicle&#xa;Types 1, 2, 2+, 3, 3+&#xa;NB / MTA / Cancel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="dc">
+      <mxGeometry x="15" y="30" width="160" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="moc" value="&lt;b&gt;MOC&lt;/b&gt;&#xa;Compulsory Motor&#xa;NB / MTA / Cancel&#xa;POP Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="dc">
+      <mxGeometry x="190" y="30" width="160" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="addon" value="&lt;b&gt;Add-on Coverage&lt;/b&gt;&#xa;Standalone / Combined&#xa;NB / MTA / Cancel&#xa;Endorsements" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="dc">
+      <mxGeometry x="365" y="30" width="160" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="dc-core" value="RADAR Rating | Named Drivers | OOS Transactions | Sanction Referral Workflows | Credit Limit Validation&#xa;Document Generation: PSMOV, APMOV, PWMOV, PSMOC, APMOC, PWMOC, PWMIAO, MV2628, APMIAO&#xa;Thai Localisation | Province-First Address | Post-Audit Tasks &amp; Notes | In-Sequence / OOS | Memo auto-populate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9e6;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="dc">
+      <mxGeometry x="540" y="30" width="800" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LAYER 5: INTEGRATION ======================== -->
+    <mxCell id="int-bg" value="Integration / Middleware Layer" style="swimlane;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#4d0099;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="860" width="1400" height="160" as="geometry" />
+    </mxCell>
+    <mxCell id="chubbio" value="&lt;b&gt;ChubbIO Integration Layer&lt;/b&gt;&#xa;&#xa;• Real-time API calls (NB/MTA/Cancel)&#xa;• 2-way OH ↔ DC status sync&#xa;• eCustodian doc routing + password protect&#xa;• MOC eCustodian policy status logic&#xa;• Full audit logging" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="int-bg">
+      <mxGeometry x="20" y="35" width="360" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="kafka" value="&lt;b&gt;Apache Kafka&lt;/b&gt;&#xa;Event Bus&#xa;&#xa;• NB / MTA / Cancel events&#xa;• MOC real-time events&#xa;• Doc delivery events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=top;" vertex="1" parent="int-bg">
+      <mxGeometry x="400" y="35" width="200" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="sftp" value="&lt;b&gt;SFTP Server&lt;/b&gt;&#xa;PBE File Delivery&#xa;&#xa;• Meridian JV files&#xa;• OV CSV (UTF-8)&#xa;• New SFTP path" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=top;" vertex="1" parent="int-bg">
+      <mxGeometry x="620" y="35" width="200" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="email-svc" value="&lt;b&gt;Email Service&lt;/b&gt;&#xa;&#xa;• Sanction referral&#xa;  notifications&#xa;• Car inspection&#xa;  alerts (6 scenarios)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=top;" vertex="1" parent="int-bg">
+      <mxGeometry x="840" y="35" width="200" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LAYER 6: EXTERNAL SYSTEMS ======================== -->
+    <mxCell id="ext-bg" value="External Systems / Third-Party APIs" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#005500;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1060" width="1820" height="160" as="geometry" />
+    </mxCell>
+    <mxCell id="radar" value="&lt;b&gt;RADAR&lt;/b&gt;&#xa;Rating / Tariff Engine&#xa;• Premium calculation&#xa;• Package ID capture&#xa;• RSA levels (Silver/Gold)&#xa;• Own Damage limits" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="20" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="meridian" value="&lt;b&gt;Meridian&lt;/b&gt;&#xa;Finance System&#xa;• PBE file processing&#xa;• Producer Branch Code&#xa;• JV / OV files&#xa;• OH Invoice number" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="250" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="ecustodian" value="&lt;b&gt;eCustodian&lt;/b&gt;&#xa;Document Custody&#xa;• Policy doc archiving&#xa;• Password protection&#xa;• Lifecycle status&#xa;• MOC / MOV / Add-on" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="480" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="sanction" value="&lt;b&gt;Sanction / AML API&lt;/b&gt;&#xa;• Individual screening&#xa;• Corporate screening&#xa;• AML / BL hits&#xa;• Referral creation&#xa;• Approval / Decline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="710" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="oic" value="&lt;b&gt;OIC API&lt;/b&gt;&#xa;Office of Insurance&#xa;Commission&#xa;• Vehicle brand code&#xa;  (dynamic lookup&#xa;  replaces hard-code)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="940" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="payment" value="&lt;b&gt;Payment Gateway&lt;/b&gt;&#xa;• Credit Card&#xa;• Credit Limit API&#xa;  (validate &amp; deduct)&#xa;• Real-time balance&#xa;• Bind-time checks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="1170" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="iia" value="&lt;b&gt;IIA&lt;/b&gt;&#xa;Integrated Insurance&#xa;Administration&#xa;• Renewal records&#xa;• Policy records&#xa;  visible in OH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="1400" y="35" width="210" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="pbook" value="&lt;b&gt;Pbook (Vehicle DB)&lt;/b&gt;&#xa;• Min / Max Sum Insured&#xa;  by vehicle make/model&#xa;• SI range logic&#xa;  (&lt;1M, 1-2M … 30M+)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=top;" vertex="1" parent="ext-bg">
+      <mxGeometry x="1620" y="35" width="180" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== ARROWS ======================== -->
+
+    <!-- Users → OH -->
+    <mxCell id="a-u1-oh" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="u1" target="oh" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Users → DC UI -->
+    <mxCell id="a-u4-dcui" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;strokeWidth=2;" edge="1" source="u4" target="dc-ui" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- OH → PAL API -->
+    <mxCell id="a-oh-pal" value="REST" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="oh" target="pal" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- OH → Vehicle Svc -->
+    <mxCell id="a-oh-veh" value="Vehicle lookups" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="oh" target="veh-svc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- OH → Bind Svc -->
+    <mxCell id="a-oh-bind" value="POP / Credit / Bind" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="oh" target="bind-svc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- DC UI → DC (direct) -->
+    <mxCell id="a-dcui-dc" value="DC native" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;strokeWidth=2;" edge="1" source="dc-ui" target="dc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- BFF → DC -->
+    <mxCell id="a-pal-dc" value="API" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="pal" target="dc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="a-bind-dc" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="bind-svc" target="dc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Notif Svc → Email -->
+    <mxCell id="a-notif-email" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="notif-svc" target="email-svc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- DC → ChubbIO -->
+    <mxCell id="a-dc-chubbio" value="API / Events" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#9673a6;strokeWidth=2;" edge="1" source="dc" target="chubbio" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- ChubbIO → Kafka -->
+    <mxCell id="a-chubbio-kafka" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#9673a6;strokeWidth=2;" edge="1" source="chubbio" target="kafka" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- ChubbIO → SFTP -->
+    <mxCell id="a-chubbio-sftp" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#9673a6;strokeWidth=2;" edge="1" source="chubbio" target="sftp" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- DC → RADAR -->
+    <mxCell id="a-dc-radar" value="Rating" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;strokeWidth=2;" edge="1" source="dc" target="radar" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- DC → Sanction -->
+    <mxCell id="a-dc-sanction" value="Screening" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;strokeWidth=2;" edge="1" source="dc" target="sanction" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- SFTP → Meridian -->
+    <mxCell id="a-sftp-meridian" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;strokeWidth=2;" edge="1" source="sftp" target="meridian" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- PAL → Meridian (Producer Branch Code) -->
+    <mxCell id="a-pal-meridian" value="Branch Code" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;dashed=1;" edge="1" source="pal" target="meridian" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Kafka → eCustodian -->
+    <mxCell id="a-kafka-ecust" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;strokeWidth=2;" edge="1" source="kafka" target="ecustodian" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Vehicle Svc → OIC -->
+    <mxCell id="a-veh-oic" value="Brand code" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="veh-svc" target="oic" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Vehicle Svc → Pbook -->
+    <mxCell id="a-veh-pbook" value="SI lookup" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="veh-svc" target="pbook" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Bind Svc → Payment -->
+    <mxCell id="a-bind-pay" value="Credit card / limit" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;" edge="1" source="bind-svc" target="payment" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- OH → IIA -->
+    <mxCell id="a-oh-iia" value="Policy records" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;strokeWidth=2;" edge="1" source="oh" target="iia" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- 2-way sync label (PAL ↔ DC) -->
+    <mxCell id="a-sync" value="2-way sync&#xa;(Quotes / Policies / Status)" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7030a0;strokeWidth=2;startArrow=block;endArrow=block;startFill=1;endFill=1;" edge="1" source="pal" target="dc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== LEGEND ======================== -->
+    <mxCell id="legend-bg" value="Legend" style="swimlane;startSize=25;fillColor=#f5f5f5;strokeColor=#666;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="1460" y="230" width="400" height="390" as="geometry" />
+    </mxCell>
+    <mxCell id="l1" value="OneHub Portal (Find &amp; Acquire)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="35" width="260" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="l2" value="Duck Creek (Policy Admin / DC UI)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="73" width="260" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="l3" value="BFF / Backend API (PAL API, Services)" style="rounded=1;fillColor=#f0e6ff;strokeColor=#7030a0;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="111" width="260" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="l4" value="ChubbIO Integration / Kafka / SFTP" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="149" width="260" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="l5" value="External System / 3rd-Party API" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="187" width="260" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="lu1" value="Agents / Marketeers / Agency Staff" style="shape=mxgraph.business.person;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="225" width="50" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="lu1t" value="Agents / Marketeers / Agency Staff" style="text;html=1;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="80" y="242" width="260" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="lu2" value="" style="shape=mxgraph.business.person;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="280" width="50" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="lu2t" value="Underwriters / PSC Users" style="text;html=1;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="80" y="297" width="260" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="lu3" value="" style="shape=mxgraph.business.person;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="legend-bg">
+      <mxGeometry x="20" y="335" width="50" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="lu3t" value="Surveyors / Back Office / Finance" style="text;html=1;fontSize=10;" vertex="1" parent="legend-bg">
+      <mxGeometry x="80" y="352" width="260" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- ======================== PRODUCT SUMMARY ======================== -->
+    <mxCell id="prod-bg" value="Products &amp; Versions" style="swimlane;startSize=25;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="1460" y="640" width="400" height="180" as="geometry" />
+    </mxCell>
+    <mxCell id="p1" value="Thailand Motor — MOV (Motor Own Vehicle)" style="text;html=1;fontSize=11;" vertex="1" parent="prod-bg">
+      <mxGeometry x="10" y="30" width="380" height="22" as="geometry" />
+    </mxCell>
+    <mxCell id="p2" value="Thailand Motor — MOC (Compulsory Motor)" style="text;html=1;fontSize=11;" vertex="1" parent="prod-bg">
+      <mxGeometry x="10" y="55" width="380" height="22" as="geometry" />
+    </mxCell>
+    <mxCell id="p3" value="Thailand Motor — Add-on Coverage" style="text;html=1;fontSize=11;" vertex="1" parent="prod-bg">
+      <mxGeometry x="10" y="80" width="380" height="22" as="geometry" />
+    </mxCell>
+    <mxCell id="p4" value="DC Version: TH Auto DC 3.0.0" style="text;html=1;fontSize=11;fontStyle=1;" vertex="1" parent="prod-bg">
+      <mxGeometry x="10" y="115" width="380" height="22" as="geometry" />
+    </mxCell>
+    <mxCell id="p5" value="OH Version: TH Auto OH 3.0.1 (Hotfix May 2026)" style="text;html=1;fontSize=11;fontStyle=1;" vertex="1" parent="prod-bg">
+      <mxGeometry x="10" y="140" width="380" height="22" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
